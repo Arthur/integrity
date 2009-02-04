@@ -34,7 +34,7 @@ module Integrity
       attr_reader :root
 
       def migrate_db(direction="up")
-        require 'migrations'
+        require "integrity/migrations"
 
         set_up_migrations unless migrations_already_set_up?
         add_initial_migration if tables_from_before_migrations_exist?
@@ -106,8 +106,8 @@ module Integrity
       end
 
       def tables_from_before_migrations_exist?
-        table_exists?("integrity_projects") && 
-          table_exists?("integrity_builds") && 
+        table_exists?("integrity_projects") &&
+          table_exists?("integrity_builds") &&
           table_exists?("integrity_notifiers")
       end
 
