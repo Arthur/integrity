@@ -25,9 +25,9 @@ class BuildNotificationsTest < Test::Unit::AcceptanceTestCase
     click_button "manual build"
 
     notification = File.read("/tmp/textfile_notifications.txt")
-    notification.should =~ /=== Build #{git_repo(:my_test_project).short_head} was successful ===/
+    notification.should =~ /=== Built #{git_repo(:my_test_project).short_head} successfully ===/
     notification.should =~ /Build #{git_repo(:my_test_project).head} was successful/
-    notification.should =~ %r(http://integrity.example.org/my-test-project/builds/#{git_repo(:my_test_project).head})
+    notification.should =~ %r(http://integrity.example.org/my-test-project/commits/#{git_repo(:my_test_project).head})
     notification.should =~ /Commit Author: John Doe/
     notification.should =~ /Commit Date: (.+)/
     notification.should =~ /Commit Message: This commit will work/

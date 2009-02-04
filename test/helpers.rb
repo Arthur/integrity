@@ -32,7 +32,7 @@ module TestHelper
   end
 
   def ignore_logs!
-    stub(Integrity).log { nil }
+    Integrity.config[:log] = "/dev/null"
   end
 end
 
