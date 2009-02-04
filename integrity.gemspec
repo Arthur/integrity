@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Nicol\303\241s Sanguinetti", "Simon Rozet"]
-  s.date = %q{2009-01-31}
+  s.date = %q{2009-02-04}
   s.default_executable = %q{integrity}
   s.description = %q{Your Friendly Continuous Integration server. Easy, fun and painless!}
   s.email = %q{contacto@nicolassanguinetti.info}
@@ -33,7 +33,6 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<dm-aggregates>, [">= 0.9.5"])
       s.add_runtime_dependency(%q<dm-migrations>, [">= 0.9.5"])
       s.add_runtime_dependency(%q<data_objects>, [">= 0.9.5"])
-      s.add_runtime_dependency(%q<do_sqlite3>, [">= 0.9.5"])
       s.add_runtime_dependency(%q<json>, [">= 0"])
       s.add_runtime_dependency(%q<foca-sinatra-diddies>, [">= 0.0.2"])
       s.add_runtime_dependency(%q<thor>, [">= 0"])
@@ -49,7 +48,6 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<dm-aggregates>, [">= 0.9.5"])
       s.add_dependency(%q<dm-migrations>, [">= 0.9.5"])
       s.add_dependency(%q<data_objects>, [">= 0.9.5"])
-      s.add_dependency(%q<do_sqlite3>, [">= 0.9.5"])
       s.add_dependency(%q<json>, [">= 0"])
       s.add_dependency(%q<foca-sinatra-diddies>, [">= 0.0.2"])
       s.add_dependency(%q<thor>, [">= 0"])
@@ -66,7 +64,6 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<dm-aggregates>, [">= 0.9.5"])
     s.add_dependency(%q<dm-migrations>, [">= 0.9.5"])
     s.add_dependency(%q<data_objects>, [">= 0.9.5"])
-    s.add_dependency(%q<do_sqlite3>, [">= 0.9.5"])
     s.add_dependency(%q<json>, [">= 0"])
     s.add_dependency(%q<foca-sinatra-diddies>, [">= 0.0.2"])
     s.add_dependency(%q<thor>, [">= 0"])
