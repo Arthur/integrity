@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + "/../helpers"
+require File.dirname(__FILE__) + "/helpers"
 
 require "integrity/installer"
 
@@ -14,7 +14,7 @@ class InstallerTest < Test::Unit::AcceptanceTestCase
     @database_path = "/tmp/integrity-test.db"
 
     config = File.read(Integrity.root / "config/config.sample.yml")
-    config.gsub!(%r(sqlite3:///var/integrity.db), "sqlite3://#{@database_path}")
+    config.gsub!(%r(sqlite3:///home/integrity/db/integrity.sqlite), "sqlite3://#{@database_path}")
     File.open(@config_path, "w") { |f| f << config }
   end
 

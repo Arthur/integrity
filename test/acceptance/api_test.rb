@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + "/../helpers"
+require File.dirname(__FILE__) + "/helpers"
 
 class ApiTest < Test::Unit::AcceptanceTestCase
   story <<-EOF
