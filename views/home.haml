@@ -4,7 +4,7 @@
     %h1
       Why don't you
       = succeed "?" do
-        %a{ :href => "/new" } create your first project
+        %a{ :href => "#{path_prefix}/new" } create your first project
 - else
   %ul#projects
     - @projects.each do |project|
@@ -20,4 +20,4 @@
             = pretty_date(project.last_build.created_at)
             = project.last_build.successful? ? "successfully" : "and failed"
   %p#new
-    %a{ :href => "/new" } Add a new project
+    %a{ :href => "#{path_prefix}/new" } Add a new project

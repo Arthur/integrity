@@ -4,9 +4,9 @@
     %meta{ :content => "text/html; charset=utf-8", :"http-equiv" => "Content-Type" }
     %meta{ :content => "en", :"http-equiv" => "Content-Language" }
     %title= "#{@title.last} | integrity"
-    %link{ :media => "screen", :type => "text/css", :href => "/reset.css", :rel => "stylesheet" }
-    %link{ :media => "screen", :type => "text/css", :href => "/buttons.css", :rel => "stylesheet" }
-    %link{ :media => "screen", :type => "text/css", :href => "/integrity.css", :rel => "stylesheet" }
+    %link{ :media => "screen", :type => "text/css", :href => "#{path_prefix}/reset.css", :rel => "stylesheet" }
+    %link{ :media => "screen", :type => "text/css", :href => "#{path_prefix}/buttons.css", :rel => "stylesheet" }
+    %link{ :media => "screen", :type => "text/css", :href => "#{path_prefix}/integrity.css", :rel => "stylesheet" }
     - unless @project.nil?
       %link{ :rel => "alternate", :type => "application/atom+xml", :title => "Build history Atom", :href => "#{project_path(@project)}.atom"}
 
@@ -24,5 +24,5 @@
           %strong&= current_user
         - else
           Hey there!
-          %a{ :href => "/login" } Log In
+          %a{ :href => login_path } Log In
           if you have a user

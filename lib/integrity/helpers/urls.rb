@@ -1,6 +1,11 @@
 module Integrity
   module Helpers
     module Urls
+      
+      def path_prefix
+        env['SCRIPT_NAME']
+      end
+      
       def url(path)
         url = "#{request.scheme}://#{request.host}"
 
@@ -13,12 +18,20 @@ module Integrity
         url << path
       end
 
+      def login_path
+        "#{path_prefix}/login"
+      end
+
+      def home_path
+        "#{path_prefix}/"
+      end
+
       def root_url
-        url("/")
+        url(home_path)
       end
 
       def project_path(project, *path)
-        "/" << [project.permalink, *path].join("/")
+        "#{path_prefix}/" << [project.permalink, *path].join("/")
       end
 
       def project_url(project, *path)
@@ -36,7 +49,7 @@ module Integrity
       end
 
       def build_path(build)
-        "/#{build.project.permalink}/builds/#{build.commit_identifier}"
+        "#{path_prefix}/#{build.project.permalink}/builds/#{build.commit_identifier}"
       end
 
       def build_url(build)
