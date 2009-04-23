@@ -3,7 +3,7 @@ module Integrity
     module Urls
       
       def path_prefix
-        env['SCRIPT_NAME']
+        request.script_name
       end
       
       def url(path)

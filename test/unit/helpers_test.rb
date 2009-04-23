@@ -22,6 +22,24 @@ class BrowsePublicProjectsTest < Test::Unit::TestCase
     pretty_date(Time.mktime(1995, 12, 15)).should == "on Dec 15th"
   end
 
+  describe "paths with prefix" do
+    before(:each) do
+      stub(self).request { OpenStruct.new(:script_name => '/my_prefix') }
+    end
+    
+    test "path_prefix" do
+      path_prefix.should == "/my_prefix"
+    end
+    
+    test "home_path" do
+      home_path.should == "/my_prefix/"
+    end
+    
+    test "login_path" do
+      login_path.should == "/my_prefix/login"
+    end
+  end
+  
   describe "#push_url_for" do
     before(:each) do
       setup_and_reset_database!
@@ -29,7 +47,7 @@ class BrowsePublicProjectsTest < Test::Unit::TestCase
       Integrity.config[:admin_username] = "admin"
       Integrity.config[:admin_password] = "test"
       
-      stub(self).request { OpenStruct.new(:scheme => "http", :port => "1234", :host => "integrity.example.org") }
+      stub(self).request { OpenStruct.new(:scheme => "http", :port => "1234", :host => "integrity.example.org", :script_name => '') }
     end
 
     test "with auth disabled" do
